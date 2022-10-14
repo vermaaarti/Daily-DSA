@@ -1,0 +1,11 @@
+1. Program to reverse an array on string
+
+2. Maximum & minimum of an array using minimum no. of comparisons
+
+3. Largest sum contigous sunarray (Kadane's algorithm)
+
+4. Check if a given array contains duplicate elements with K distancefrom each other
+
+5. Chocolate distribution problem
+
+Bonus Q.-- Find duplicates in a given array whenelement are not limited to a range 
