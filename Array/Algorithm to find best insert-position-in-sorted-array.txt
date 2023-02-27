@@ -1,0 +1,28 @@
+Algorithm to find best insert position in sorted array
+
+given a sorted array 'A' of length 'N' with distinct integers and
+ a target integer 'M'. you need to return the position of 'M' if it
+  existed in the array 'A'. if it it already exists in 'A', return 
+  that position. (0 based indexing)
+
+  ##########easy ----
+
+
+  int bestInsertPos(vector<int> arr, int n, int m)
+{
+
+   int low = 0; 
+    int high = n-1;
+
+    while(low<=high){
+        int mid = low + (high-low)/2;
+        
+      if(arr[mid]==m){return mid;}
+      else if(arr[mid]<m){low = mid+1;}  
+      else if(arr[mid]>m){high = mid-1;} 
+
+    }
+    return low;
+
+
+}
