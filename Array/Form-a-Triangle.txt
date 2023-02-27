@@ -1,0 +1,28 @@
+Given an integer of array/list of length 'ARR' of length N.
+ You are supposed to return true if it is possible to construct
+  at least onr non-degenerate triang;e using values of array/list
+   as sides of the triangle, otherwise, return false.
+
+   #####easy--
+
+   #include <bits/stdc++.h> 
+bool possibleToMakeTriangle(vector<int> &arr)
+{
+    // Write your code here.
+    //     a triangle is called as non-degenerate if its three sides
+     shows following things that is a,b and c 
+   // 1. a+b>c
+   // 2. b+c>a
+   // 3. a+c>b
+   if(arr.size()<3){
+       return false;
+   }
+   else{
+       sort(arr.begin(),arr.end());
+       for(int i=0; i<arr.size()-2; i++){
+           if(arr[i]+arr[i+1]>arr[i+2]){
+               return true;
+           }
+       }
+   }
+}
