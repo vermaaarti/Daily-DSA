@@ -1,0 +1,43 @@
+########################## easy ---
+
+pair<int, int> findFirstLastPosition(vector<int> &arr, int n, int x)
+{
+	// Write your code here.
+	pair<int, int>prr;
+	prr.first = -1;
+	prr.second = -1;
+
+	int s=0, e=n-1;
+	while(s<=e){
+    int mid = s + (e-s)/2;
+	if(arr[mid] == x){
+      prr.first = mid;
+	  e = mid-1;
+	}
+	else if(arr[mid]<x){
+		s = mid+1;
+	}
+	else{
+		e = mid-1;
+	}
+	}
+
+	 s=0, e=n-1;
+	while(s<=e){
+    int mid = s + (e-s)/2;
+	if(arr[mid] == x){
+      prr.second = mid;
+	  s = mid+1;
+	}
+	else if(arr[mid]<x){
+		s = mid+1;
+	}
+	else{
+		e = mid-1;
+	  }
+	}
+
+    return prr;
+
+}
+

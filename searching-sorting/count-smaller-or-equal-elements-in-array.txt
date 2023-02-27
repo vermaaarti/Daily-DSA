@@ -1,3 +1,24 @@
+given 2 array of int. let's call the first array A and 2nd array 
+B. a finds the number of elements in array that are smaller 
+than or equal to that element for every array element
+
+example A = [2, 3, 0] and B = [5,1]
+  for A[0] = 2
+  in array B only 1 is less thn 2, therefore the
+   answer for the first index is 1.
+
+   for A[1] = 3
+  in array B only 1 is less thn 3, therefore the
+   answer for the first index is also 1.
+
+   for A[2] = 0
+  both element of array B  are greater than 0. therefore the
+   answer for the first index is 0.
+
+   hence , final answer is [1,1,0] in this case.
+
+########## medium   -----
+
 STEPWISE ILLUSTRATION
 
  
