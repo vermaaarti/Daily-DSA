@@ -1,0 +1,16 @@
+remove vovels
+
+exapmle 1 :  CodingNinja
+ans =  CodingNnj
+
+
+run a loop ans check if chars are equal to vowels(both small ans capital 
+letters with || condition) do continue; and after the if statement, add it to the new blank 
+string.
+
+
+or 
+
+run a loop ans check if chars are not equal to vowels(both small ans capital 
+letters with && condition) ans add it to the new blank string.
+
