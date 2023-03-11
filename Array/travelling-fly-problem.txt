@@ -1,0 +1,41 @@
+Travelling Fly Problem
+Easy
+
+A fly is sitting on one of the 'N' sweets, arranged in a circle, 
+at the moment. After minute no. 'K' , the fly files to the neighbouring
+sweet . After the second minute , it files to the second next 
+of thr current sweet , ans so on.
+
+your task is to find out whether thr fly can visit all the sweets 
+or not. Assuming that the fly never stops flying.
+
+Problem Statement
+Detailed explanation ( Input/output format, Notes, Constraints, Images )
+Sample Input 1 :
+2
+1
+3
+Sample Output 1 :
+YES
+NO
+Explanation For Sample Input 1 :
+In the first testcase, 
+There is just 1 sweet.
+In the second testcase, 
+After a few trials, we can see that the fly can never reach the 3rd sweet.
+Sample Input 2 :
+2
+4
+5
+Sample Output 2 :
+YES
+NO
+
+
+   string fly(int n){
+   float i = log2(n);
+   if(ceil(i) == floor(i))
+       return "YES";
+       else
+       return "NO";
+   }
