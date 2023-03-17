@@ -1,0 +1,52 @@
+Given an array/list 'ARR' of integers of length 'N'. 
+You are aupposed to find all the elements that occur strictly
+ more than floor(n/3) times in the given array/list.
+
+Constraints
+1<=T<=100
+3<=N<=5000
+1<=ARR[i]<=10^5
+
+time limit : 1 sec
+
+
+Example
+
+input
+2
+7
+3 2 2 1 5 2 3
+7 4 4 9 7
+
+Output
+2
+4 7
+
+In the first test case, floor(N/3) = floor(7/3) is equal to 2,
+ and 2 occurs 3 times which is strictly more than N/3. 
+ No other element occurs more than 2 times.
+
+ In the second test case, floor(N/3) = floor(4/3) is equal to 1,
+  and 6 occurs 3 times. No other element occurs more than once.
+
+
+
+  #include <bits/stdc++.h> 
+#include <bits/stdc++.h> 
+vector<int> majorityElementII(vector<int> &arr)
+{
+    // Write your code here.
+    vector<int>ans;
+    unordered_map<int, int>mpp;
+
+    int n = arr.size();
+    for(int i=0; i<n; i++){
+        mpp[arr[i]]++;
+    }
+    for(auto it:mpp){
+        if(it.second > floor(n/3)) 
+        ans.push_back(it.first);
+    }
+     return ans;
+}
+
