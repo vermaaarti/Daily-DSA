@@ -45,3 +45,6 @@ Constraints:
 		    sort(ans.begin(), ans.end());
 		    return ans;
 		}
+
+        TC = O(2^n*log(n))
+        SC = O(2^n)
