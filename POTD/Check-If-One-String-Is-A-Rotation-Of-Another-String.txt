@@ -1,0 +1,63 @@
+Yor are given 2 strings P and Q of equal length. Your task is to 
+check whether string P can be converted into string Q by 
+cyclically rotating it to right any number of times(possibly zero).
+
+
+input
+2
+abac
+baca
+apq
+epq
+
+output 
+1
+0
+
+Explanation For Sample Input 1:
+For the first test case :
+Let's try rotating the String P to the right and try all the possible rotations
+1) If we rotate "abac" to the right the resulting string becomes "caba".
+2) If we rotate "caba" to the right the resulting string becomes "acab".
+3) If we rotate "acab" to the right the resulting string becomes "baca" which is equal to String Q.
+Therefore it is possible to convert String P to String Q. Hence, we will return 1 in this case.
+
+For the second test case : 
+It can be seen that the String P contains a character 'a' which is not present in String Q hence it is not possible to convert String P to String Q. Hence, the answer is 0 in this case.
+
+
+Sample Input 2:
+2
+aabca
+bacaa
+abr
+rab
+Sample Output 2:
+0
+1
+
+
+
+#include <bits/stdc++.h> 
+int isCyclicRotation(string &p, string &q) 
+{
+    //    Write your code here
+    string s = p+p;
+    int n = s.size();
+    int m = q.size();
+     if(p.size()==1){
+         if(p[0] == q[0]) return 1;
+         else return 0;
+     }
+    for(int i=0; i<n-m; i++){
+        int flag = 1,j;
+        for(j=0; j<m-1; j++){
+            if(q[j] != s[i+j]){
+                flag = 0; break;
+            }
+        }
+        if(flag ==1){return 1;}
+    }
+    return 0;
+
+}
