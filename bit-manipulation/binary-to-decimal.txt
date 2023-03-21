@@ -1,7 +1,14 @@
-ways to convert a binary number into decimal number
+ways to convert a binary number into decimal & decimal to binary number
 
 
- int n = 11001;
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    cout<<" binary to int"<<endl;
+    int n = 11001;
     string s = to_string(n);
       string bin(s);
       int num = stoi(bin, nullptr, 2);
@@ -17,3 +24,73 @@ ways to convert a binary number into decimal number
     int number = bits.to_ulong();
     cout<<number<<" ";
     
+    
+    
+    cout<<"int to binary"<<endl;
+    //  int to binary
+    
+     // TC = O(logN) SC=O(1)
+    vector<int>sum;
+    int m = 7;
+     while(m){
+         int num = m%2;
+         sum.push_back(num);
+         m = m/2;
+     }
+     for(int i=sum.size()-1; i>=0; i--){
+         cout<<sum[i];
+     }
+     cout<<endl;
+     
+    // TC = O(1) SC=O(1)    here loop is running constant(32) time
+     int p=128;
+     for (int i = 31; i >= 0; i--) {
+        int k = p >> i;
+        if (k & 1)
+            cout << "1";
+        else
+            cout << "0";
+    }
+    cout<<endl;
+    
+    
+    // TC = O(logN) SC=O(1) 
+    string str;
+    int value = 32;
+    while(value){
+      if(value & 1) // 1
+        str+='1';
+      else // 0
+        str+='0';
+      value>>=1; // Right Shift by 1 
+    } 
+    reverse(str.begin(), str.end());
+    cout<<str;
+    cout<<endl;
+    
+    
+   // TC = O(logN) SC=O(1)
+    long long int binaryNumber = 0;
+    int count = 0;
+    int val = 12;
+    while (val != 0) {
+        int rem = val % 2;
+       int ans = pow(10, count);
+        binaryNumber += rem * ans;
+        val /= 2;
+        // Count used to store exponent value
+        count++;
+    }
+    cout<<binaryNumber;
+    cout<<endl;
+    
+    
+    // Time complexity: O(logn) 
+    // Auxiliary Space: O(1) 
+    int nu = 15;
+    int nm = (int)(log2(nu));
+    cout<< bitset<64>(nu).to_string().substr(64 - nm-1);
+     cout<<endl;
+    
+    return 0;
+}
