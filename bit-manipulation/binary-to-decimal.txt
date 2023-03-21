@@ -1,0 +1,19 @@
+ways to convert a binary number into decimal number
+
+
+ int n = 11001;
+    string s = to_string(n);
+      string bin(s);
+      int num = stoi(bin, nullptr, 2);
+      cout<<num<<" ";
+      
+      
+        bitset<32> b(s);
+    int dec=b.to_ulong();
+    cout<<dec<<" ";
+    
+    
+    bitset<64> bits(s);
+    int number = bits.to_ulong();
+    cout<<number<<" ";
+    
