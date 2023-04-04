@@ -1,0 +1,70 @@
+(Sliding Window Technique)
+Can you think how you can remove the second loop or the inner loop in the above brute force approach by using the sliding window technique?
+
+Observations:
+
+The elements are consecutive in every window.
+The next window overlaps almost entirely with previous window except the first element of previous window.
+While moving to next window, we are adding just one new element, removing one old element from the sum of previous window.
+Visually it will appear something like:
+
+
+
+For the given array , Arr = {1,7,6,2,3,4,5}, and K = 2.
+
+Let us assume currsum = 0
+
+And maxsum = INT_MIN
+So for the first window of size K, our currsum will be 8 and maxsum will also be 8. 
+
+For the next window of size K, we can calculate currsum simply by:
+
+removing first element.
+adding the new element.
+Hence, updated currsum for second window will be:
+
+currsum = currsum -  1 + 6
+        = 8 - 1 + 6
+        = 13
+
+Therefore, maxsum will be updated to 13.
+ Similarly, we will keep on sliding the window one by one, and calculate the max sum of all windows of size K.
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+// Using sliding window technique
+int findmaxconssum(int arr[], int n, int k)
+{
+    int currsum=0;
+    for(int i=0;i<k;i++)
+    {
+        currsum+=arr[i];
+    }
+    int maxsum=currsum;
+    for(int i=k;i<n-k;i++)
+    {
+        currsum-=arr[i-k];
+        currsum+=arr[i];
+        maxsum=max(maxsum,currsum);
+    }
+    return maxsum;
+}
+int main()
+{
+    int arr[] = {1, 7, 6, 2, 3, 4, 5};
+    int n = 7;
+    int k = 2;
+    cout << findmaxconssum(arr, n, k) << endl;
+    return 0;
+}
+
+
+
+Output: 13
+
+Time complexity – O(n)
+
+Space complexity – O(1)
