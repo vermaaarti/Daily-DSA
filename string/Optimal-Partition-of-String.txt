@@ -43,3 +43,6 @@ public:
        return count;
     }
 };
+
+TC = O(n)
+sc = O(1)
