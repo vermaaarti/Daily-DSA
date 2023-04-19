@@ -96,7 +96,6 @@ Idea: By making elements negative.
 
 Approach: The idea is to traverse the given array, use elements as an index and store their counts at the index. Consider the basic approach, a Hashmap of size n is needed and the array is also of size n. So the array can be used as a hashmap, all the elements of the array are from 1 to n, i.e. all are positive elements. So the frequency can be stored as negative. This might lead to a problem. Let i-th element be a then the count should be stored at array[a-1], but when the frequency will be stored the element will be lost. To deal with this problem, first, replace the ith element by array[a-1] and then put -1 at array[a-1]. So our idea is to replace the element by frequency and store the element in the current index and if the element at array[a-1] is already negative, then it is already replaced by a frequency so decrement array[a-1].
 
-
  
 Implementation:
 Traverse the array from start to end.
@@ -158,3 +157,22 @@ Time Complexity: O(n). As a single traversal of the array takes O(n) time.
 Space Complexity: O(1). Since no extra space is needed.
 
 
+----------------------------------------------- 2nd method ------------------------------
+class Solution{
+    public:
+void frequencyCount(vector<int>& arr,int N, int P) {
+    unordered_map<int,int>mpp;
+
+    for(int i=0;i<N;i++) {
+        mpp[arr[i]]++;
+    }
+    for(int i=0;i<N;i++) {
+        if(mpp.find(i+1)!=mpp.end()){
+            arr[i] = mpp[i+1];
+        }
+        else{
+            arr[i]=0;
+        }
+    }
+}
+ };
