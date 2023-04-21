@@ -1,0 +1,5 @@
+STL - https://www.geeksforgeeks.org/the-c-standard-template-library-stl/
+
+Containers
+Vector = https://www.geeksforgeeks.org/vector-in-cpp-stl/
+List(linked-list) = https://www.geeksforgeeks.org/list-cpp-stl/
