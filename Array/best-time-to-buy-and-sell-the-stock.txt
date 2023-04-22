@@ -1,0 +1,14 @@
+long getMaximumProfit(long *values, int n)
+{
+    //Write your code here
+    
+    long maxprofit=0;
+
+    for(int i=1; i<n; i++){
+       if(values[i]>=values[i-1]){
+           maxprofit+=(values[i]-values[i-1]);
+       }
+    }
+
+    return maxprofit;
+}
