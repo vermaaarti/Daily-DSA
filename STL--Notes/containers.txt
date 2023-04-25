@@ -1,8 +1,13 @@
 STL - https://www.geeksforgeeks.org/the-c-standard-template-library-stl/
 
-Containers
+Sequence Containers:
 Vector = https://www.geeksforgeeks.org/vector-in-cpp-stl/
 List(linked-list) = https://www.geeksforgeeks.org/list-cpp-stl/
 deque = https://www.geeksforgeeks.org/deque-cpp-stl/
 array = https://www.geeksforgeeks.org/array-class-c/
-.....................................................
+forward-list = https://www.geeksforgeeks.org/forward-list-c-set-1-introduction-important-functions/
+
+Container Adaptors:
+deque = https://www.geeksforgeeks.org/queue-cpp-stl/
+priority-queue = https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/
+stack = https://www.geeksforgeeks.org/stack-in-cpp-stl/
