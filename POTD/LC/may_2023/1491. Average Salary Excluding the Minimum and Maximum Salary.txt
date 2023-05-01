@@ -23,6 +23,22 @@ Constraints:
 All the integers of salary are unique.
 
 
+Intuition
+Calculate the average of an array(salary) expect min and max element.
+
+Approach
+Brute Force - Find out min and max, calculate sum of the elements and subtract the sum of min and max and find out the 
+average by size array(salary) size-2.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)
+
+
+
 TC, SC = O(n) O(1)
 class Solution {
 public:
