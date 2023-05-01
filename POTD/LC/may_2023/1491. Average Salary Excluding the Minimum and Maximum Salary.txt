@@ -23,6 +23,7 @@ Constraints:
 All the integers of salary are unique.
 
 
+TC, SC = O(n) O(1)
 class Solution {
 public:
     double average(vector<int>& salary) {
@@ -41,3 +42,31 @@ public:
         return sum;
     }
 };
+
+
+---------------------------------------------------------------------------------------
+
+in terms of CP codeeee
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        // calculate the total sum
+        int sum = accumulate(salary.begin(), salary.end(), 0);
+        // find the maximum value
+        int mx = *max_element(salary.begin(), salary.end());
+        // find the minimum value
+        int mi = *min_element(salary.begin(), salary.end());
+		// exclude mi & mx and get the avg 
+        return (double) (sum - mx - mi) / (salary.size() - 2);
+    }
+};
+
+learned -----
+to find max and min max_element
+        // find the maximum value
+        int mx = *max_element(salary.begin(), salary.end());
+        // find the minimum value
+        int mi = *min_element(salary.begin(), salary.end());
+calculate sum
+  // calculate the total sum
+        int sum = accumulate(salary.begin(), salary.end(), 0);
