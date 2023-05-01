@@ -70,3 +70,24 @@ to find max and min max_element
 calculate sum
   // calculate the total sum
         int sum = accumulate(salary.begin(), salary.end(), 0);
+
+
+        -------------------------------------------------------------------------------------
+        other way-------------
+
+        class Solution {
+public:
+    double average(vector<int>& salary) {
+        int n = salary.size();
+		// sort the salary to get the mi & mx from the beginning and the end
+        sort(salary.begin(), salary.end());
+        // calculate the total sum
+        double sum = accumulate(salary.begin(), salary.end(), 0.0);
+        // remove the minimum value
+        sum -= salary[0];
+        // remove the maximum value
+        sum -= salary[n - 1];
+		// exclude mi & mx and get the avg 
+        return sum / (n - 2);
+    }
+};
