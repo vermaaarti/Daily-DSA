@@ -88,3 +88,7 @@ public:
     }
 };
 
+/////////////////////////// 4th || one liner Approach /////////////////////////////
+int arraySign(std::vector<int>& nums) {
+        return std::accumulate(nums.begin(), nums.end(), 1, [](int a, int b) { return b > 0 ? a : b < 0 ? -a : 0; });
+    }
